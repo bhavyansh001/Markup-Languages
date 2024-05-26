@@ -1,0 +1,98 @@
+Yet Another Markup Language => Yaml Ain't Markup Language (recursively calling itself lol)
+Extension can be yml or yaml
+"apple": "I am a red fruit"
+# Lists
+- apple
+- mango
+
+cities:
+ - new delhi  (tab doesn't work, indentation is must and is maintained using spaces)
+ - mumbai
+
+bio: |
+Used pipe symbol so that,
+multiple lines can be added.
+
+message: >
+This will
+all be
+in one single line
+
+number: 5478
+marks: 89.09
+boolValue: No # n, N, false, False, FALSE (similar for Yes)
+
+# Specifying the type
+
+number: !!int -45
+binaryNum: !!int 0b1101 
+(try entering anything else except 1 and 0, the color will change; similarly for putting digit >7 below)
+octalNum: !!int 0677
+hexa: !!int 0xaa894f
+commaValue: !!int +540_000 #540,000
+not a number: .nan
+exponential numbers: 6.012E56
+
+# Similar is for string
+message: !!str this is a string
+# float for floating numbers
+
+# null
+surname: !!null Null # or null, NULL, ~
+~: this is a null key
+
+# Nested lists (type for lists = !!seq)
+cities:
+ - new delhi
+ - mumbai
+-  (this will mean end of one part and begining of other since there is no space)
+ - Null
+ - sup
+---   (marks end of the list)
+cities: [new delhi, mumbai]
+---
+{mango: "yellow fruit", age: 56}
+
+date: !!timestamp 2023-12-14
+india time: 2023-12-14T02:30:48.10
+
+# !!map for maps
+# nested maps-
+name: Person A
+role:
+ age: 23
+ job: student
+
+# same as
+name: Person A
+role: {age: 23, job: student}
+
+# !!pairs
+
+pair example: !!pairs
+ - job: student
+ - job: teacher
+# same as
+pair example: !!pairs [job: student, job: teacher]
+# this will be an array of hashtables
+
+# !!set allows you to have only unique values
+? first
+? second
+
+# !!omap for dictionary
+
+# Reusing using anchors
+likings: &likes
+ fav fruit: mango
+ dislikes: grapes
+
+person1:
+name: Person 1
+<<: *likes  (some can be overriden by mentioning them subsequently)
+
+
+
+...   (three dots like this marks the end of this yaml file)
+
+

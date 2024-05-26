@@ -1,0 +1,22 @@
+// json
+// Double quote only
+// Has key value pair
+// (So can say it is an object of js) 
+
+{
+"name": " String" Or number or boolean or [] or {}(nested json) 
+}
+
+// Can be parsed as object using JSON.parse(name of json) 
+// parsed = JSON.parse(..) 
+
+// parsed[][] for indexing
+
+// There are converters online that can convert valid json to yaml and/or xml and vice versa
+
+{
+    "cities": [
+        "new delhi",
+        "mumbai"
+    ]
+}
